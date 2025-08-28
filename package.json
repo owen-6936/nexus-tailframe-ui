@@ -1,0 +1,49 @@
+{
+  "name": "nexus-tailframe-ui",
+  "version": "1.0.0",
+  "description": "A highly flexible and customizable UI component library for React, built with the power of Tailwind CSS and the magic of Framer Motion. Reduce boilerplate and build beautiful, animated user interfaces with ease.",
+  "keywords": [
+    "["
+  ],
+  "homepage": "https://github.com/owen-6936/nexus-tailframe-ui#readme",
+  "bugs": {
+    "url": "https://github.com/owen-6936/nexus-tailframe-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owen-6936/nexus-tailframe-ui.git"
+  },
+  "license": "MIT",
+  "author": "Owen Erhabor",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": ">=19.1.1",
+    "react-dom": ">=19.1.1",
+    "tailwindcss": ">=4.1.12",
+    "autoprefixer": ">=10.0.0",
+    "framer-motion": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-swc": "^0.4.0",
+    "@swc/core": "^1.13.5",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.8",
+    "eslint": "^9.34.0",
+    "jest": "^30.1.1",
+    "rollup": "^4.49.0",
+    "typescript": "^5.9.2"
+  }
+}
