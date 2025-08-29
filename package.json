@@ -1,66 +1,71 @@
 {
-  "name": "nexus-tailframe-ui",
-  "version": "1.0.0",
-  "description": "A highly flexible and customizable UI component library for React, built with the power of Tailwind CSS and the magic of Framer Motion. Reduce boilerplate and build beautiful, animated user interfaces with ease.",
-  "keywords": [
-    "["
-  ],
-  "homepage": "https://github.com/owen-6936/nexus-tailframe-ui#readme",
-  "bugs": {
-    "url": "https://github.com/owen-6936/nexus-tailframe-ui/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/owen-6936/nexus-tailframe-ui.git"
-  },
-  "license": "MIT",
-  "author": "Owen Erhabor",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "vite --host",
-    "build": "rollup -c",
-    "type-check": "tsc --noEmit",
-    "test": "jest",
-    "lint": "eslint . --ext .ts,.tsx",
-    "clean": "rm -rf dist",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "peerDependencies": {
-    "autoprefixer": ">=10.0.0",
-    "framer-motion": ">=10.0.0",
-    "react": ">=19.1.1",
-    "react-dom": ">=19.1.1",
-    "tailwindcss": ">=4.1.12"
-  },
-  "devDependencies": {
-    "@rollup/plugin-swc": "^0.4.0",
-    "@storybook/addon-docs": "^9.1.3",
-    "@storybook/addon-onboarding": "^9.1.3",
-    "@storybook/react-vite": "^9.1.3",
-    "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.5",
-    "@tailwindcss/vite": "^4.1.12",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.8",
-    "@vitejs/plugin-react-swc": "^4.0.1",
-    "eslint": "^9.34.0",
-    "eslint-plugin-storybook": "^9.1.3",
-    "jest": "^30.1.1",
-    "jest-environment-jsdom": "^30.1.1",
-    "react-icons": "^5.5.0",
-    "rollup": "^4.49.0",
-    "storybook": "^9.1.3",
-    "ts-jest": "^29.4.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
-  }
+    "name": "nexus-tailframe-ui",
+    "version": "1.0.0",
+    "description": "A highly flexible and customizable UI component library for React, built with the power of Tailwind CSS and the magic of Framer Motion. Reduce boilerplate and build beautiful, animated user interfaces with ease.",
+    "keywords": [
+        "["
+    ],
+    "homepage": "https://github.com/owen-6936/nexus-tailframe-ui#readme",
+    "bugs": {
+        "url": "https://github.com/owen-6936/nexus-tailframe-ui/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/owen-6936/nexus-tailframe-ui.git"
+    },
+    "license": "MIT",
+    "author": "Owen Erhabor",
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "vite --host",
+        "build": "rollup -c",
+        "type-check": "tsc --noEmit",
+        "test": "jest",
+        "lint": "eslint . --ext .ts,.tsx",
+        "format": "prettier --write .",
+        "clean": "rm -rf dist",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "peerDependencies": {
+        "autoprefixer": ">=10.0.0",
+        "framer-motion": ">=10.0.0",
+        "react": ">=19.1.1",
+        "react-dom": ">=19.1.1",
+        "tailwindcss": ">=4.1.12"
+    },
+    "devDependencies": {
+        "@rollup/plugin-swc": "^0.4.0",
+        "@storybook/addon-docs": "^9.1.3",
+        "@storybook/addon-onboarding": "^9.1.3",
+        "@storybook/react-vite": "^9.1.3",
+        "@swc/cli": "^0.7.8",
+        "@swc/core": "^1.13.5",
+        "@tailwindcss/vite": "^4.1.12",
+        "@testing-library/jest-dom": "^6.8.0",
+        "@testing-library/react": "^16.3.0",
+        "@types/react": "^19.1.12",
+        "@types/react-dom": "^19.1.8",
+        "@vitejs/plugin-react-swc": "^4.0.1",
+        "eslint": "^9.34.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "eslint-plugin-storybook": "^9.1.3",
+        "jest": "^30.1.1",
+        "jest-environment-jsdom": "^30.1.1",
+        "prettier": "^3.6.2",
+        "react-icons": "^5.5.0",
+        "rollup": "^4.49.0",
+        "storybook": "^9.1.3",
+        "ts-jest": "^29.4.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.41.0"
+    }
 }
