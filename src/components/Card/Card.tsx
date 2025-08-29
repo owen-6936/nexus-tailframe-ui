@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { customVariants } from '../../constants/variants';
-import { classNames } from '../../utils/helper';
+import { classNames, getPaddingClasses } from '../../utils/helper';
 import { CardHeaderProps, CardProps, CardSectionProps } from '../../types/card';
 import CardHeader from './CardHeader';
 import CardBody from './CardBody';
 import CardFooter from './CardFooter';
 import { ROUNDED, BORDER, BORDER_STYLE } from '../../constants/constants';
+import { twMerge } from 'tailwind-merge';
 
 // The main reusable Card component.
 const Card: React.FC<CardProps> & {
@@ -17,7 +18,7 @@ const Card: React.FC<CardProps> & {
     children,
     index,
     bg = 'bg-white/10',
-    padding = 'px-8 py-7',
+    paddingRatio = { x: 6, y: 4 },
     amount = 0.2,
     className = '',
     variants,
@@ -33,9 +34,11 @@ const Card: React.FC<CardProps> & {
     return (
         <motion.div
             ref={ref} // Attach the ref to the component
-            className={classNames(
-                `${bg} ${ROUNDED[rounded]} ${padding} ${BORDER[border]} ${BORDER_STYLE[borderStyle]}`,
-                className,
+            className={twMerge(
+                classNames(
+                    `${bg} ${ROUNDED[rounded]} ${BORDER[border]} ${BORDER_STYLE[borderStyle]} ${getPaddingClasses(paddingRatio)}`,
+                    className,
+                ),
             )}
             variants={
                 variants
