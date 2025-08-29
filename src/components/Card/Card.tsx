@@ -1,40 +1,16 @@
-import React, { useRef, type ReactNode } from "react";
-import { motion, type Variants, useInView } from "framer-motion";
-import { AnimationVariants, customVariants } from "../../constants/variants";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { customVariants } from "../../constants/variants";
 import { classNames } from "../../utils/helper";
-
-// Define the props for the main Card container
-interface CardProps {
-  children: React.ReactNode;
-  index?: number;
-  className?: string;
-  bg?: string;
-  padding?: string;
-  // Allows the user to provide custom animation variants
-  variants?: AnimationVariants | Variants;
-  amount?: number;
-}
-
-// Define the props for the card header
-interface CardHeaderProps {
-  title: string;
-  icon?: ReactNode;
-  subtitle?: string;
-  align?: "left" | "center" | "right";
-  gradient?: boolean;
-  className?: string;
-}
-// Define the props for the sub-components
-interface CardSectionProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const alignment = {
-  left: "text-left",
-  center: "text-center",
-  right: "text-right",
-};
+import {
+  CardHeaderProps,
+  CardProps,
+  CardRounded,
+  CardSectionProps,
+} from "../../types/card";
+import CardHeader from "./CardHeader";
+import CardBody from "./CardBody";
+import CardFooter from "./CardFooter";
 
 // The main reusable Card component.
 // It uses a ref and the useInView hook to trigger animations when the card becomes visible.
@@ -50,6 +26,7 @@ const Card: React.FC<CardProps> & {
   amount = 0.2,
   className,
   variants,
+  rounded = "2xl",
 }) => {
   // Create a ref to attach to the motion component
   const ref = useRef(null);
@@ -59,7 +36,10 @@ const Card: React.FC<CardProps> & {
   return (
     <motion.div
       ref={ref} // Attach the ref to the component
-      className={classNames(`${bg} rounded-2xl ${padding}`, className ?? "")}
+      className={classNames(
+        `${bg} ${CardRounded[rounded]} ${padding}`,
+        className ?? ""
+      )}
       variants={
         variants
           ? typeof variants === "string"
@@ -79,56 +59,6 @@ const Card: React.FC<CardProps> & {
     </motion.div>
   );
 };
-
-// Sub-component for the card header
-const CardHeader: React.FC<CardHeaderProps> = ({
-  title,
-  icon,
-  subtitle,
-  align = "left",
-  gradient = false,
-  className = "",
-}) => (
-  <div className={classNames("mb-4", className)}>
-    <div className={`flex items-center gap-2 ${alignment[align]}`}>
-      {icon && <div className="w-5 h-5 mb-0.5 text-blue-400">{icon}</div>}
-      <h2
-        className={classNames(
-          "text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 w-full",
-          gradient
-            ? "bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text"
-            : ""
-        )}
-      >
-        {title}
-      </h2>
-    </div>
-    {subtitle && (
-      <p className={classNames("text-sm text-gray-300 mt-1", alignment[align])}>
-        {subtitle}
-      </p>
-    )}
-  </div>
-);
-
-// Sub-component for the card body
-const CardBody: React.FC<CardSectionProps> = ({ children, className }) => (
-  <div className={classNames("text-sm md:text-base", className ?? "")}>
-    {children}
-  </div>
-);
-
-// Sub-component for the card footer
-const CardFooter: React.FC<CardSectionProps> = ({ children, className }) => (
-  <div
-    className={classNames(
-      "mt-4 pt-2 border-t border-white/10 text-xs text-blue-300",
-      className ?? ""
-    )}
-  >
-    {children}
-  </div>
-);
 
 // Assign the sub-components to the main Card component
 Card.Header = CardHeader;
