@@ -4,6 +4,12 @@ import { ReactNode } from 'react';
 
 type CardRounded = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
 
+type PaddingScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+export interface PaddingRatio {
+    x: PaddingScale;
+    y: PaddingScale;
+}
 export interface CardTheme {
     backgroundColor: string;
     textColor: string;
@@ -16,7 +22,7 @@ export interface CardProps {
     index?: number;
     className?: string;
     bg?: string;
-    padding?: string;
+    paddingRatio?: PaddingRatio;
     // Allows the user to provide custom animation variants
     variants?: AnimationVariants | Variants;
     amount?: number;
